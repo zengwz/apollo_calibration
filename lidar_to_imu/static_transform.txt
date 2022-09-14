@@ -1,0 +1,52 @@
+从左到右：六个数字分别为XYZ偏移量，Z偏航角度，Y俯仰角度，X翻滚角度，两个topic分别为父级坐标系和子级坐标系
+rosrun tf2_ros static_transform_publisher 0 -0.145 1.24 -1.57 0 0 /imu /rslidar_top
+rosrun tf2_ros static_transform_publisher -0.4 0.7 -1 1.59 0 0 /rslidar_top /rslidar_left
+rosrun tf2_ros static_transform_publisher -0.4 -0.7 -1 -1.57 0 0 /rslidar_top /rslidar_right
+rosrun tf2_ros static_transform_publisher 1.8 0 -1.2 0 0 0 /rslidar_top /rslidar_front
+
+rosrun tf2_ros static_transform_publisher 0 -0.145 1.24 1.57 0 0 /imu /rslidar_top
+rosrun tf2_ros static_transform_publisher -0.7 -0.545 0.24 3.1608 0 0 /imu /rslidar_left
+rosrun tf2_ros static_transform_publisher 0.7 -0.545 0.24 0 0 0 /imu /rslidar_right
+rosrun tf2_ros static_transform_publisher 0 1.655 0.04 1.5708 0 0 /imu /rslidar_front
+
+四个矩阵分别为top到imu，left right front到top的变换矩阵
+[0 -1 0 0;
+1 0 0 -0.145;
+0 0 1 1.24;
+0 0 0 1]
+
+[ -0.0192025 -0.9998156 0.0000000 -0.4;
+0.9998156 -0.0192025 0.0000000 0.7;
+0.0000000 0.0000000 1.0000000 -1;
+0 0 0 1]
+
+[0 -1 0 -0.3;
+1 0 0 -0.7;
+0 0 1 -1;
+0 0 0 1]
+
+[1 0 0 1.8;
+0 1 0 0;
+0 0 1 -1.2;
+0 0 0 1]
+
+四个矩阵分别为top left right front到imu的变换矩阵
+0 -1 0 0
+1 0 0 -0.145
+0 0 1 1.24
+0 0 0 1
+
+ -0.9998    0.0192         0   -0.7000
+   -0.0192   -0.9998         0   -0.5450
+         0         0    1.0000    0.2400
+         0         0         0    1.0000
+         
+   1.0000         0         0    0.7000
+         0   1.0000         0   -0.5450
+         0         0    1.0000    0.2400
+         0         0         0    1.0000
+         
+         0   -1.0000         0         0
+    1.0000         0         0    1.6550
+         0         0    1.0000    0.0400
+         0         0         0    1.0000
