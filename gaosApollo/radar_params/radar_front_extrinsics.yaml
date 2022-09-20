@@ -3,15 +3,15 @@ header:
   stamp:
     secs: 0
     nsecs: 0
-  frame_id: velodyne128
+  frame_id: rslidar80_top
 child_frame_id: radar_front
 transform:
   translation:
-    x: 2.6399201750755337
-    y: 5.271220001122807e-16
-    z: -1.623000025749203
+    x: 1.75
+    y: 0
+    z: -1.4
   rotation:
-    x: 0.0
+    x: -1.0
     y: 0.0
     z: 0.0
-    w: 1.0
+    w: 0.0

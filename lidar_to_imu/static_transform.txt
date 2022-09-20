@@ -4,12 +4,13 @@ rosrun tf2_ros static_transform_publisher -0.4 0.7 -1 1.59 0 0 /rslidar_top /rsl
 rosrun tf2_ros static_transform_publisher -0.4 -0.7 -1 -1.57 0 0 /rslidar_top /rslidar_right
 rosrun tf2_ros static_transform_publisher 1.8 0 -1.2 0 0 0 /rslidar_top /rslidar_front
 
+测量top到imu的距离：前后0.145，高度差1.24，左右0。通过矩阵传递，可以得到适配APOLLO要求的变换矩阵
 rosrun tf2_ros static_transform_publisher 0 -0.145 1.24 1.57 0 0 /imu /rslidar_top
 rosrun tf2_ros static_transform_publisher -0.7 -0.545 0.24 3.1608 0 0 /imu /rslidar_left
 rosrun tf2_ros static_transform_publisher 0.7 -0.545 0.24 0 0 0 /imu /rslidar_right
 rosrun tf2_ros static_transform_publisher 0 1.655 0.04 1.5708 0 0 /imu /rslidar_front
 
-四个矩阵分别为top到imu，left right front到top的变换矩阵
+四个矩阵分别为top到imu，left、right、front到top的变换矩阵
 [0 -1 0 0;
 1 0 0 -0.145;
 0 0 1 1.24;
@@ -30,7 +31,7 @@ rosrun tf2_ros static_transform_publisher 0 1.655 0.04 1.5708 0 0 /imu /rslidar_
 0 0 1 -1.2;
 0 0 0 1]
 
-四个矩阵分别为top left right front到imu的变换矩阵
+四个矩阵分别为top、left、right、front到imu的变换矩阵
 0 -1 0 0
 1 0 0 -0.145
 0 0 1 1.24
