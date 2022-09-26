@@ -4,7 +4,7 @@ header:
     secs: 0
     nsecs: 0
   frame_id: novatel
-child_frame_id: rslidar16_front
+child_frame_id: rslidar16_rear_left
 transform:
   translation:
     x: -0.7

@@ -8,8 +8,8 @@ child_frame_id: rslidar16_front
 transform:
   translation:
     x: 0
-    y: -0.145
-    z: 1.24
+    y: 1.655
+    z: 0.04
   rotation:
     x: 0.0
     y: 0.0
